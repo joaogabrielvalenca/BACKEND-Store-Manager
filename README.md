@@ -52,7 +52,7 @@ Neste projeto, verificamos se você é capaz de:
 
 - Serão `5` dias de projeto
 
-- Data de entrega para avaliação regular do projeto: `DD/MM/YYYY 14:00h`
+- Data de entrega para avaliação regular do projeto: `13/07/2023 14h00`
 
 </details>
 
