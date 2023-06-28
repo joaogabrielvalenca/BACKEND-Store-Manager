@@ -76,6 +76,8 @@ Bora relembrar conceitos importantes para gerir suas emoções durante o projeto
 - [ ] [Inteligência emocional](https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/module/2e0692c9-e226-4e95-860a-b4cad80e3c3c/section/d041930c-2861-493a-ab7e-9f566aa90d29/day/6b885527-c7e6-468f-b5ae-6cf19d7aa110/lesson/87cad177-bff0-4beb-b9f8-c19b126513f7)
 - [ ] [Emoções](https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/module/2e0692c9-e226-4e95-860a-b4cad80e3c3c/section/d041930c-2861-493a-ab7e-9f566aa90d29/day/5b748ff2-db33-4356-95c8-709c9ff40263/lesson/ecf9bb36-ca1d-470c-bfe9-e5409e2e3e15)
 - [ ] [Aprender a aprender](https://www.youtube.com/watch?v=zPXhXfA2GEY)
+- [ ] [Como lidar com a preocupação constante](https://zenklub.com.br/conteudo/jornadas/preocupacao---vermelho/?from=library)
+
 
 ## Requisitos obrigatórios do Projeto
 
