@@ -45,19 +45,44 @@ describe('GET /products', function () {
 
       expect(response).to.be.an('array');
       expect(response).to.deep.equal([{ message: 'Product not found' }]);
-    });
   });
+it('Testa a atualização de um produto existente', async function () {
+  const productId = 1;
+  const newProductName = 'Nova Garras do Wolverine';
+  const updatedProduct = {
+    id: productId,
+    name: newProductName,
+  };
 
-// it('deve lidar com erro de conexão ao buscar todos os produtos', async function () {
-//   const connectionError = new Error('Erro de conexão');
-//   sinon.stub(connection, 'execute').rejects(connectionError);
+  const mockExecute = sinon.stub(connection, 'execute');
+  mockExecute.resolves([{ affectedRows: 1 }]);
 
-//   try {
-//     await productModel.findAllProducts();
-//     // Se o código chegar aqui, significa que a lógica de tratamento de erro não está funcionando corretamente
-//     expect.fail('A função deveria lançar um erro');
-//   } catch (error) {
-//     expect(error.message).to.equal('Erro de conexão');
-//     // Verificar se a mensagem de erro é a esperada
-//   }
-// });
+  const result = await productModel.updateProduct(productId, { name: newProductName });
+
+  expect(result).to.deep.equal(updatedProduct);
+  sinon.assert.calledOnceWithExactly(mockExecute, 'UPDATE products SET name = ? WHERE id = ?', [newProductName, productId]);
+
+  // Restaurar o stub para o comportamento original
+  mockExecute.restore();
+});
+it('Testa a atualização de um produto inexistente', async function () {
+  const fakeId = 1;
+  const fakeNewData = { name: 'Novo Produto' };
+
+  const executeStub = sinon.stub(connection, 'execute');
+  executeStub.resolves([{ affectedRows: 0 }]); // Simula a atualização sem sucesso (ID não encontrado)
+
+  const result = await productModel.updateProduct(fakeId, fakeNewData);
+
+  expect(result).to.equal(null);
+
+  sinon.assert.calledOnceWithExactly(
+    executeStub,
+    'UPDATE products SET name = ? WHERE id = ?',
+    [fakeNewData.name, fakeId],
+  );
+
+  // Restaurar o stub para o comportamento original
+  executeStub.restore();
+});
+});

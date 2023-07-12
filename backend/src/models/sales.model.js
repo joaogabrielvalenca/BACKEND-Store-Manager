@@ -66,8 +66,19 @@ const createSale = async (itemsSold) => {
   return response;
 };
 
+const consoleSaleModel = (item) => {
+  console.log(item);
+};
+
+const consolePassPls = (pass) => {
+  console.log(pass);
+};
+
 module.exports = {
   findAllSales,
   findSalesById,
+  insertSaleProducts,
   createSale,
+  consoleSaleModel,
+  consolePassPls,
 };

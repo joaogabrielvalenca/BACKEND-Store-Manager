@@ -39,8 +39,8 @@ const validateProductIds = async (items) => {
     const product = productModel.findProductById(productId);
     return product;
   });
-
   const results = await Promise.all(promises);
+  console.log(results);
   return results;
 };
 
